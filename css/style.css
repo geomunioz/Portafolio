@@ -1,10 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap'); */
 
 :root{
-    --primary-color: #1b1717;
-    --secondary-color: #810000;
+    --primary-color: #0B0B0B;
+    --secondary-color: #0E7F3D;
+    --color-green: #32B768;
     --color-white: #fff;
+    --color-gray: #8F8F8F;
 
+    --color-twitter: #00ACEE;
+    --color-linkedin: #0e76a8;
+    --color-instagram: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285aeb 90%
+      );
     --font-title: 2.4em;
 }
 
@@ -29,7 +42,7 @@ body{
 
 /*ALL-----------------------------------------------------*/
 .max-width{
-    max-width: 1300px;
+    max-width: 1100px;
     padding: 0 10%;
     margin: 0 auto;
 }
@@ -60,13 +73,13 @@ header{
 .navbar .menu li a{
     display: block;
     color: var(--blue-color);
-    font-size: 18px;
+    font-size: 2rem;
     font-weight: 500;
     margin-left: 25px;
 }
 
 .navbar .menu li a:hover{
-    color: white;
+    color: var(--primary-color);
     transition: all 0.3s ease;
 }
 
@@ -86,9 +99,11 @@ header{
 .presentacion .perfil{
     width: 90%;
     margin: 0 auto;
+    display: flex;
 }
 .presentacion .perfil img{
     width: 80%;
+    margin: 0 auto;
     object-fit: cover;
     border-radius: 50%;
     border: 10px solid var(--secondary-color);
@@ -104,11 +119,26 @@ header{
 
 .presentacion .info a{
     margin: 0 5px;
-    color: var(--secondary-color);
+    color: var(--color-gray);
 }
 
-.presentacion .info a:hover{
+.info a .fa-twitter:hover{
+    color: var(--color-twitter);
+}
+
+.info a .fa-linkedin:hover{
+    color: var(--color-linkedin);
+}
+
+.info a .fa-github:hover{
     color: var(--color-white);
+}
+
+.info a .fa-instagram:hover{
+    background-image: var(--color-instagram) !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .presentacion .info .fab{
@@ -121,28 +151,28 @@ header{
 }
 
 .acerca p{
-    font-size: 1.6rem;
+    font-size: 1.8em;
     text-align: justify;
+    font-weight: 500;
 }
 
 .proyectos{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    grid-gap: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 25px 0 50px;
 }
 
 .proyectos a{
     text-decoration: none;
+    margin: 20px auto;
 }
 
 .proyectos .card{
     width: 250px;
-    max-height: 280px;
+    max-height: 290px;
     border-radius: 15px;
     margin: 0 auto;
-    background-color: var(--secondary-color);
-    border:2px solid var(--secondary-color);
 }
 
 .proyectos .card:hover{
@@ -163,17 +193,18 @@ header{
 }
 
 .card .details{
-    height: 90px;
+    height: 100px;
     margin: 5px 10px 15px 15px;
     color: var(--color-white);
 }
 
 .details h4{
-    font-size: 1.8em;
+    font-size: 2em;
+    color: var(--color-green);
 }
 
 .details p{
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 footer{
@@ -191,7 +222,7 @@ footer{
     width: 42px;
     background: var(--secondary-color);
     right: 30px;
-    bottom: 10px;
+    bottom: 50px;
     text-align: center;
     line-height: 45px;
     color: #fff;
@@ -205,7 +236,7 @@ footer{
 }
 
 .scroll-up-btn.show{
-    bottom: 30px;
+    bottom: 80px;
     opacity: 1;
     pointer-events: auto;
 }
