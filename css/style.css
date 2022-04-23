@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 :root{
     --primary-color: #0B0B0B;
-    --secondary-color: #0E7F3D;
-    --color-green: #32B768;
-    --color-white: #fff;
-    --color-gray: #8F8F8F;
+    --secondary-color: #0442BF;
+    --color-blue: #3377FF;
+    --color-white: #E5EEFF;
+    --color-black: #000000;
 
     --color-twitter: #00ACEE;
     --color-linkedin: #0e76a8;
@@ -18,7 +17,7 @@
         #d6249f 60%,
         #285aeb 90%
       );
-    --font-title: 2.4em;
+    --font: 'Open Sans', sans-serif;
 }
 
 *{
@@ -27,34 +26,35 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
+    font-family: var(--font);
 }
 
 
 html{
     font-size: 62.5%;
-    font-family: 'Poppins', sans-serif;
-    color: white;
 }
 
 body{
-    background-color: var(--primary-color);
+    font-size: 1.6rem;
 }
 
 /*ALL-----------------------------------------------------*/
 .max-width{
-    max-width: 1100px;
+    max-width: 1200px;
     padding: 0 10%;
     margin: 0 auto;
 }
 
 .title{
-    font-size: var(--font-title);
+    font-size: 1.6em;
+    color: var(--secondary-color);
 }
 /*NAVBAR--------------------------------------------------*/
 header{
     background-color: var(--secondary-color);
     padding: 15px 0;
 }
+
 .navbar{
     display: flex;
     width: 100%;
@@ -62,8 +62,15 @@ header{
     align-items: center;
 }
 
-.navbar h1{
-    font-size: var(--font-title);
+.navbar .logo-icon{
+    width: 150px;
+    height: 50px;
+}
+
+.logo-icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .navbar .menu li{
@@ -72,8 +79,8 @@ header{
 
 .navbar .menu li a{
     display: block;
-    color: var(--blue-color);
-    font-size: 2rem;
+    color: var(--color-white);
+    font-size: 1.2em;
     font-weight: 500;
     margin-left: 25px;
 }
@@ -85,31 +92,31 @@ header{
 
 .menu-btn{
     color: var(--color-white);
-    font-size: var(--font-title);
+    font-size: 1.6em;
     cursor: pointer;
     display: none;
 }
 
 /*MAIN------------------------------------------------------*/
-.presentacion{
+.presentation{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 95px 0;
 }
-.presentacion .perfil{
+.presentation .profile{
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
 }
-.presentacion .perfil img{
+
+.presentation .profile-img{
     width: 80%;
     margin: 0 auto;
     object-fit: cover;
     border-radius: 50%;
-    border: 10px solid var(--secondary-color);
 }
 
-.presentacion .info{
+.personal-information{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,94 +124,118 @@ header{
     color: var(--color-white);
 }
 
-.presentacion .info a{
-    margin: 0 5px;
-    color: var(--color-gray);
+.information-name{
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
-.info a .fa-twitter:hover{
+.information-job{
+    font-size: 1.6em;
+    font-weight: 600;
+    color: var(--color-blue);
+}
+
+.personal-information a{
+    margin: 0 5px;
+    color: var(--color-black);
+}
+
+.fa-twitter:hover{
     color: var(--color-twitter);
 }
 
-.info a .fa-linkedin:hover{
+.fa-linkedin:hover{
     color: var(--color-linkedin);
 }
 
-.info a .fa-github:hover{
+.fa-github:hover{
     color: var(--color-white);
 }
 
-.info a .fa-instagram:hover{
+.fa-instagram:hover{
     background-image: var(--color-instagram) !important;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.presentacion .info .fab{
+.personal-information .fab{
     margin-top: 15px;
     font-size: 2.6rem;
 }
 
-.acerca{
+.target{
     margin: 0px 0px 50px;
 }
 
-.acerca p{
-    font-size: 1.8em;
+.target-description{
+    font-size: 1.2em;
+    line-height: 1.8em;
     text-align: justify;
     font-weight: 500;
 }
 
-.proyectos{
+.projects{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 25px 0 50px;
+    justify-content: space-around;
+    margin: 18px 0 50px;
 }
 
-.proyectos a{
+.projects a{
     text-decoration: none;
     margin: 20px auto;
 }
 
-.proyectos .card{
-    width: 250px;
-    max-height: 290px;
-    border-radius: 15px;
+.projects .card{
+    width: 300px;
+    /* max-height: 350px; */
+    border-radius: 8px;
     margin: 0 auto;
 }
 
-.proyectos .card:hover{
+.projects .card:hover{
     box-shadow: 0 1px 20px 0 var(--secondary-color); 
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.card .card-img{
+.card-img{
     width: 150px;
+    aspect-ratio: 1;
 }
 
-.card .card-img img{
+.card-img img{
     width: 100%;
-    height: 150px;
+    /* height: 150px; */
     object-fit: cover;
-    border-radius: 15px 15px 0 0;
+    aspect-ratio: 1;
+    border-radius: 8px;
 }
 
 .card .details{
-    height: 100px;
-    margin: 5px 10px 15px 15px;
-    color: var(--color-white);
+    height: 150px;
+    padding: 16px 10px 15px 16px;
+    text-overflow: ellipsis;
 }
 
-.details h4{
-    font-size: 2em;
-    color: var(--color-green);
+.details .project-title{
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--secondary-color);
 }
 
-.details p{
-    font-size: 1.4em;
+.details .project-description{
+    margin-bottom: 12px;
+    font-size: 1em;
+    color: var(--color-black);
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 footer{
@@ -213,7 +244,8 @@ footer{
     align-items: center;
     height: 70px;
     background-color: var(--secondary-color);
-    font-size: 1.4em;
+    font-size: 1.2em;
+    color:var(--color-white);
 }
 
 .scroll-up-btn{
@@ -274,25 +306,27 @@ footer{
     .navbar .menu li a{
         display: inline-block;
         margin: 20px 0;
-        font-size: var(--font-title);
+        font-size: 1.6em;
     }
 }
 
 @media (max-width: 430px){
-    .presentacion{
+    .presentation{
         grid-template-columns: 1fr;
+        margin: 40px 0;
     }
 
-    .presentacion .perfil{
+    .presentation .profile{
         display: flex;
         justify-content: center;
     }
 
-    .presentacion .info{
+    .presentation .info{
         margin-top: 25px;
     }
 
-    .proyectos .card{
-        width: 260px;
+    .projects a{
+        margin: 20px 0;
     }
+
 }
